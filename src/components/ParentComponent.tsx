@@ -8,6 +8,7 @@ export const ParentComponent = () => {
             <Space direction='vertical'>
         <ChildComponent/>
         <ChildComponent/>
+        <ChildComponent/>
         </Space>
         </Card>
     )
