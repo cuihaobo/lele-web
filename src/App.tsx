@@ -1,18 +1,22 @@
 import { Layout } from "antd";
 import "./App.css";
-import { TopNavigation } from "./components/TopNavigation";
+import { TextMenu } from "./components/TopNavigation";
 import { RouterMap } from "./RouterMap";
-import { Content, Header } from "antd/es/layout/layout";
+import { Content } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 
 function App() {
   return (
     <>
-      <TopNavigation />
+      <TextMenu />
       <Layout style={{ height: "100vh" }}>
         <Sider></Sider>
         <Content>
-          <RouterMap />
+        <Layout>
+          <Content style={{ padding: '20px' }}>
+              <RouterMap />
+          </Content>
+        </Layout>
         </Content>
       </Layout>
     </>
