@@ -1,12 +1,15 @@
 import { Col, Row } from "antd"
-
+// xs={24} sm={24} md={24} xl={12}
 export const Home = () => {
     return (
-        <Row>
-      <Col  sm={4} md={6}  xl={10} span={6}>col-6</Col>
-      <Col  sm={4} md={6}  xl={10} span={6}>col-6</Col>
-      <Col  sm={4} md={6}  xl={10} span={6}>col-6</Col>
-      <Col  sm={4} md={6}  xl={10} span={6}>col-6</Col>
-    </Row>
+      <>
+        <Row gutter={3}>
+          <Col style={{ backgroundColor: 'red'}} xs={24} sm={24} md={12} xl={6}>
+            
+          </Col>
+          <Col style={{ backgroundColor: 'blue'}} xs={24} sm={24} md={12} xl={12}>col-2</Col>
+          <Col style={{ backgroundColor: 'green'}} xs={24} sm={24} md={8} xl={6}>col-s</Col>
+        </Row>
+      </>
     )
 }

@@ -2,24 +2,26 @@ import { AppstoreOutlined, ContainerOutlined, DesktopOutlined, MailOutlined, Men
 import { Button, Menu, MenuProps} from 'antd'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
 export const TextMenu = () => {
+  const [collapsed, setCollapsed] = useState(true);
   type MenuItem = Required<MenuProps>['items'][number];
 
-function getItem(
-  label: React.ReactNode,
-  key: React.Key,
-  icon?: React.ReactNode,
-  children?: MenuItem[],
-  type?: 'group',
-): MenuItem {
-  return {
-    key,
-    icon,
-    children,
-    label,
-    type,
-  } as MenuItem;
-}
+  function getItem(
+    label: React.ReactNode,
+    key: React.Key,
+    icon?: React.ReactNode,
+    children?: MenuItem[],
+    type?: 'group',
+  ): MenuItem {
+    return {
+      key,
+      icon,
+      children,
+      label,
+      type,
+    } as MenuItem;
+  }
 
 const items: MenuItem[] = [
   getItem('Option 1', '1', <PieChartOutlined />),
@@ -41,15 +43,13 @@ const items: MenuItem[] = [
   ]),
 ];
 
-const App: React.FC = () => {
-  const [collapsed, setCollapsed] = useState(false);
-
   const toggleCollapsed = () => {
     setCollapsed(!collapsed);
+    console.log(collapsed)
   };
 
   return (
-    <div style={{ width: 256 }}>
+    <div style={{ width: 200 }}>
       <Button
         type="primary"
         onClick={toggleCollapsed}
@@ -67,7 +67,6 @@ const App: React.FC = () => {
       />
     </div>
   );
-};
 }
 
 export const TopNavigation = () => {
