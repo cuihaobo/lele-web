@@ -1,5 +1,5 @@
-import { AppstoreOutlined, ContainerOutlined, DesktopOutlined, MailOutlined, MenuFoldOutlined, MenuUnfoldOutlined, PieChartOutlined } from '@ant-design/icons'
-import { Button, Menu, MenuProps} from 'antd'
+import { AppstoreOutlined, ContainerOutlined, DesktopOutlined, MailOutlined, MenuFoldOutlined, MenuUnfoldOutlined, PieChartOutlined, UserOutlined } from '@ant-design/icons'
+import { Avatar, Button, Menu, MenuProps} from 'antd'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -49,14 +49,8 @@ const items: MenuItem[] = [
   };
 
   return (
-    <div style={{ width: 200 }}>
-      <Button
-        type="primary"
-        onClick={toggleCollapsed}
-        style={{ marginBottom: 16 }}
-      >
-        {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-      </Button>
+    <div style={{ width: 200, textAlign:'center' }}>
+      <Avatar style={{ backgroundColor: '#f56a00', margin: 20 }} size={80} shape="square" icon={<UserOutlined />} />
       <Menu
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}
@@ -71,7 +65,8 @@ const items: MenuItem[] = [
 
 export const TopNavigation = () => {
     return (
-        <Menu mode="horizontal">
+      <>
+       <Menu mode="horizontal">
             <Menu.Item>
                 <Link to="/">Home</Link>  
             </Menu.Item>
@@ -85,5 +80,7 @@ export const TopNavigation = () => {
                 <Link to="/profile">Profile</Link>  
             </Menu.Item>
         </Menu>
+      </>
+        
     )
 }
